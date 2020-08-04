@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
 //configuração do MongoDB com o banco de dados online
-mongoose.connect("mongodb+srv://marza:<>@produtos.uauvo.mongodb.net/<produtos>?retryWrites=true&w=majority",
+mongoose.connect("mongodb+srv://marza:<1234567890>@produtos.uauvo.mongodb.net/<dbname>?retryWrites=true&w=majority",
     { useUnifiedTopology: true, useNewUrlParser: true },
     () => {
         console.log("Banco de dados conectado");
@@ -20,18 +20,19 @@ const Produto = mongoose.model("Produto");
 
 //cadastro
 app.post("/produto", (req, res) => {
-    var produto = new Produto({
-        nome: req.body.nome,
-        fabricante: req.body.fabricante,
-        preco: req.body.preco,
-    });
 
-    produto.save()
-        .then(() => {
+    if (req.body.nome != undefined && req.body.fabricante != undefined && req.body.preco != undefined) {
+
+        var produto = new Produto({
+            nome: req.body.nome,
+            fabricante: req.body.fabricante,
+            preco: req.body.preco,
+        });
+
+        produto.save().then(() => {
             res.statusCode = 201;
             res.send();
-        })
-        .catch((err) => {
+        }).catch((err) => {
             if (err) {
                 throw err;
             }
@@ -39,6 +40,9 @@ app.post("/produto", (req, res) => {
             res.statusCode = 417;
             res.send();
         })
+    } else {
+        res.statusCode = 417
+    }
 })
 
 app.listen(8080, () => {
