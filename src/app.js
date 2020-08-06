@@ -3,11 +3,16 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const app = express();
-const router = express.Router();
 
 //Conecta ao banco
-mongoose.connect('mongodb+srv://marza:12345@nodestore.uauvo.azure.mongodb.net/nodeStore?retryWrites=true&w=majority');
-// { useUnifiedTopology: true, useNewUrlParser: true }
+mongoose.connect('mongodb+srv://marza:12345@nodestore.uauvo.azure.mongodb.net/nodeStore?retryWrites=true&w=majority', {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+    useCreateIndex: true
+});
+
+//Carrega os Models
+const Product = require('./models/product');
 
 //Carregar as Rotas
 const indexRoute = require('./routes/index-route');
