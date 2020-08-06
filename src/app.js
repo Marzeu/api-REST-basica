@@ -8,7 +8,8 @@ const app = express();
 mongoose.connect('mongodb+srv://marza:12345@nodestore.uauvo.azure.mongodb.net/nodeStore?retryWrites=true&w=majority', {
     useUnifiedTopology: true,
     useNewUrlParser: true,
-    useCreateIndex: true
+    useCreateIndex: true,
+    useFindAndModify: false
 });
 
 //Carrega os Models
