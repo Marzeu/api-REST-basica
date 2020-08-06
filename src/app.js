@@ -1,8 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const app = express();
 const router = express.Router();
+
+//Conecta ao banco
+mongoose.connect('mongodb+srv://marza:12345@nodestore.uauvo.azure.mongodb.net/nodeStore?retryWrites=true&w=majority');
+// { useUnifiedTopology: true, useNewUrlParser: true }
 
 //Carregar as Rotas
 const indexRoute = require('./routes/index-route');
