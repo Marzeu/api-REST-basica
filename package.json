@@ -19,13 +19,15 @@
   },
   "homepage": "https://github.com/Marzeu/api-REST-basica#readme",
   "dependencies": {
+    "@sendgrid/mail": "^7.2.3",
     "body-parser": "^1.19.0",
     "debug": "^4.1.1",
     "express": "^4.17.1",
     "guid": "0.0.12",
     "http": "0.0.1-security",
     "md5": "^2.3.0",
-    "mongoose": "^5.9.27"
+    "mongoose": "^5.9.27",
+    "sendgrid": "^5.2.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
