@@ -8,7 +8,7 @@ const schema = new Schema({
     },
     number: {
         type: String,
-        required: true,
+        required: true
     },
     createData: {
         type: Date,
