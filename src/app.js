@@ -1,11 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const config = require('./config')
 
 const app = express();
 
 //Conecta ao banco
-mongoose.connect('mongodb+srv://marza:12345@nodestore.uauvo.azure.mongodb.net/nodeStore?retryWrites=true&w=majority', {
+mongoose.connect(config.connectionString, {
     useUnifiedTopology: true,
     useNewUrlParser: true,
     useCreateIndex: true,
