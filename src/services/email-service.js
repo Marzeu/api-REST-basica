@@ -7,7 +7,7 @@ exports.send = async (to, subject, body) => {
         .send({
             to: to,
             from: 'marzahell@hotmail.com',
-            subject: subject,
+            subject: 'asda',
             html: body
         })
         .then(() => { }, error => {
@@ -17,4 +17,4 @@ exports.send = async (to, subject, body) => {
                 console.error(error.response.body)
             }
         });
-}
+} 
