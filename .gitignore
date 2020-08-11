@@ -2,3 +2,4 @@ node_modules
 config.jssendgrid.env
 sendgrid.env
 src/config.js
+sendgrid.env
