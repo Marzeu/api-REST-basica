@@ -1,3 +1,4 @@
+'use strict';
 const repository = require('../repositories/order-repository');
 const guid = require('guid');
 const authService = require('../services/auth-service');
