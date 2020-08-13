@@ -2,7 +2,7 @@ const ValidationContract = require('../validators/fluent-validator');
 const repository = require('../repositories/customer-repository');
 const md5 = require('md5');
 const authService = require('../services/auth-service');
-const sgMail = require('../services/email-service');
+// const sgMail = require('../services/email-service');
 
 exports.post = async (req, res, next) => {
     let contract = new ValidationContract();
@@ -52,6 +52,7 @@ exports.authenticate = async (req, res, next) => {
         }
 
         const token = await authService.generateToken({
+            // id: customer._id,
             email: customer.email,
             name: customer.name
         });
