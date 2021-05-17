@@ -28,7 +28,9 @@
     "jsonwebtoken": "^8.5.1",
     "md5": "^2.3.0",
     "mongoose": "^5.9.27",
-    "sendgrid": "^5.2.3"
+    "sendgrid": "^5.2.3",
+    "mquery": ">=3.2.3",
+    "axios": ">=0.21.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
